@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Graphical Output</title>
+<script type='text/javascript' src='ECOTree.js'></script>
+<link type='text/css' rel='stylesheet' href='ECOTree.css' />
+<xml:namespace ns='urn:schemas-microsoft-com:vml' prefix='v'/>
+<style>v\:*{ behavior:url(#default#VML);}</style>
+<script>
+var myTree = null;
+function CreateTree() {
+myTree = new ECOTree('myTree','myTreeContainer');
+myTree.config.linkType = 'B';
+myTree.config.topYAdjustment = 0;
+myTree.config.topXAdjustment = 300;
+myTree.config.linkColor = 'black';
+myTree.config.nodeColor = '#FFAAAA';
+myTree.config.nodeBorderColor = 'black';
+myTree.config.useTarget = false;
+myTree.config.selectMode = ECOTree.SL_SINGLE;
+myTree.add(0,-1,3,40,40);
+myTree.add(1,0,1,40,40);
+myTree.add(2,0,7,40,40);
+myTree.add(3,1,0,40,40);
+myTree.add(4,1,2,40,40);
+myTree.add(5,2,5,40,40);
+myTree.add(6,2,8,40,40);
+myTree.add(7,5,4,40,40);
+myTree.add(8,5,6,40,40);
+myTree.add(9,6,9,40,40);
+myTree.UpdateTree();
+}
+</script>
+</head>
+<body onload='CreateTree();'>
+<div id='myTreeContainer'>
+</div>
+</body>
+</html>
